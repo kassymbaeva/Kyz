@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ақбота - Узату</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Dancing Script', cursive;
+            color: #3b3b3b;
+            text-align: center;
+            background: url('BAD1CEDA-8BC5-4712-904F-549012DCE126.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 95%;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 48px;
+            margin-bottom: 5px;
+            color: #2f2f2f;
+        }
+        h2 {
+            font-family: 'Great Vibes', cursive;
+            margin-top: 0;
+            font-size: 32px;
+            color: #444;
+        }
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .countdown {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #6c63ff;
+        }
+        iframe {
+            width: 100%;
+            height: 250px;
+            border: 0;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 30px;
+            background-color: #6c63ff;
+            color: white;
+            font-size: 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-family: 'Dancing Script', cursive;
+        }
+        .btn:hover {
+            background-color: #5146d9;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <h1>Ақбота</h1>
+        <h2>Узату</h2>
+        <p><strong>Құрметті қонақтар!</strong></p>
+        <p>Сіздерді аяулы қызымыз <strong>Ақботаның</strong><br>
+        узату тойына арналған салтанатты дастарханның<br>
+        қадірлі қонағы болуға шақырамыз.</p>
+
+        <p><strong>📍 Мекенжай:</strong><br> Тараз, ресторан Ақ Сарай, Әл-Фараби 25Г</p>
+
+        <iframe 
+            src="https://www.google.com/maps?q=Тараз,+ресторан+Ак+Сарай,+Аль-Фараби+25Г&output=embed">
+        </iframe>
+
+        <p><strong>⏰ Уақыты:</strong><br> 1 қараша 2025 жыл, 18:00</p>
+
+        <div class="countdown" id="countdown"></div>
+
+        <p><strong>📞 Байланыс:</strong><br> 8 778 597 53 40 (Фарида)</p>
+
+        <a class="btn" href="https://wa.me/77785975340?text=Сәлеметсіз%20бе!%20Мен%20Ақботаның%20узатуына%20келемін.">✅ Қатысамын</a>
+    </div>
+
+    <script>
+        // Countdown Timer
+        const eventDate = new Date("Nov 1, 2025 18:00:00").getTime();
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = 
+                days + " күн " + hours + " сағ " + minutes + " мин " + seconds + " сек";
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "🎉 Мереке басталды!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
